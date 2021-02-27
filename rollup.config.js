@@ -17,7 +17,7 @@ const bundlePlugins = [
 
 export default [
   {
-    input: 'lib/index.js',
+    input: 'src/index.js',
     output: {
       file: './build/index.js',
       name: 'index',
