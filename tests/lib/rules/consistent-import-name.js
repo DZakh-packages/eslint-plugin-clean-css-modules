@@ -2,20 +2,19 @@
  * @fileoverview Assures consistent usage of css-modules in your project
  * @author Dmitry Zakharov
  */
-'use strict';
 
 //------------------------------------------------------------------------------
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/consistent-import-name'),
-  RuleTester = require('eslint').RuleTester;
+const { RuleTester } = require('eslint');
+const rule = require('../../../lib/rules/consistent-import-name');
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester({
+const ruleTester = new RuleTester({
   parserOptions: {
     sourceType: 'module',
     ecmaVersion: 6,

@@ -11,7 +11,11 @@
   "author": "Dmitry Zakharov",
   "main": "lib/index.js",
   "scripts": {
+    "dev": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js",
     "test": "mocha tests --recursive",
+    "lint": "ESLINT_CLI=true eslint --cache",
+    "lint:fix": "npm run lint -- --fix --ext .js,.jsx .",
     "test-staged": "lint-staged"
   },
   "husky": {
@@ -20,15 +24,33 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,md,html,css,json}": [
-      "prettier --write"
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint -- --fix"
+    ],
+    "*.{js,jsx,ts,tsx,md,html,css,scss,json}": [
+      "npm run prettify --"
     ]
   },
   "dependencies": {
-    "requireindex": "~1.1.0"
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "rollup": "^2.40.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-no-loops": "^0.3.0",
+    "eslint-plugin-no-use-extend-native": "^0.5.0",
+    "eslint-plugin-optimize-regex": "^1.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
     "mocha": "^7.2.0",
