@@ -15,7 +15,13 @@ var rule = require('../../../lib/rules/consistent-import-name'),
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
+var ruleTester = new RuleTester({
+  parserOptions: {
+    sourceType: 'module',
+    ecmaVersion: 6,
+    ecmaFeatures: { jsx: true },
+  },
+});
 ruleTester.run('consistent-import-name', rule, {
   valid: [
     // give me some code that won't trigger a warning
@@ -23,11 +29,11 @@ ruleTester.run('consistent-import-name', rule, {
 
   invalid: [
     {
-      code: '',
+      code: `import { styles } from './hello-world.css'`,
       errors: [
         {
-          message: 'Fill me in.',
-          type: 'Me too',
+          message: 'No ImportDeclaration.',
+          type: 'ImportDeclaration',
         },
       ],
     },
