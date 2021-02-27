@@ -7,20 +7,34 @@
     "eslintplugin",
     "eslint-plugin"
   ],
+  "license": "ISC",
   "author": "Dmitry Zakharov",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "mocha tests --recursive",
+    "test-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,html,css,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
     "eslint": "^7.1.0",
-    "mocha": "^7.2.0"
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "mocha": "^7.2.0",
+    "prettier": "^2.2.1"
   },
   "engines": {
     "node": ">=0.10.0"
-  },
-  "license": "ISC"
+  }
 }
