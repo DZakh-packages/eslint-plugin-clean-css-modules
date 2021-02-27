@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-clean-css-modules",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Helps in writing code with css-modules",
   "keywords": [
     "eslint",
