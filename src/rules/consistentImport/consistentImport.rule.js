@@ -1,43 +1,31 @@
-/**
- * @fileoverview Assures consistent usage of css-modules in your project
- * @author Dmitry Zakharov
- */
+import { PACKAGE_VERSION } from '@/constants';
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
+export const MESSAGE_IDS = {
+  testKey1: 'testKey1',
+};
 
 export const consistentImportRule = {
   meta: {
+    type: 'problem',
     docs: {
-      description: 'Assures consistent usage of css-modules in your project',
-      category: 'Fill me in',
-      recommended: false,
+      description: 'ensures consistent usage of css-modules in your project',
+      category: 'Possible Errors',
+      url: `https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/blob/v${PACKAGE_VERSION}/src/rules/consistentImport/consistentImport.doc.md`,
+      recommended: true,
+      suggestion: true,
     },
-    fixable: null, // or "code" or "whitespace"
-    schema: [
-      // fill in your schema
-    ],
+    fixable: 'code',
+    schema: [],
+    messages: {
+      [MESSAGE_IDS.testKey1]: 'Test message',
+    },
   },
-
   create(context) {
-    // variables should be defined here
-
-    //----------------------------------------------------------------------
-    // Helpers
-    //----------------------------------------------------------------------
-
-    // any helper functions should go here or else delete this section
-
-    //----------------------------------------------------------------------
-    // Public
-    //----------------------------------------------------------------------
-
     return {
       ImportDeclaration(node) {
         context.report({
           node,
-          message: 'No ImportDeclaration.',
+          messageId: MESSAGE_IDS.testKey1,
         });
       },
     };

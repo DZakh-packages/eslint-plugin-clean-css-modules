@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 import { RuleTester } from 'eslint';
-import { consistentImportRule as rule } from './index';
+import { consistentImportRule as rule, MESSAGE_IDS } from './consistentImport.rule';
 
 //------------------------------------------------------------------------------
 // Tests
@@ -31,7 +31,7 @@ ruleTester.run('consistent-import-name', rule, {
       code: `import { styles } from './hello-world.css'`,
       errors: [
         {
-          message: 'No ImportDeclaration.',
+          messageId: MESSAGE_IDS.testKey1,
           type: 'ImportDeclaration',
         },
       ],
