@@ -1,4 +1,4 @@
-import consistentImportNameRule from './consistent-import-name';
+import { consistentImportNameRule } from './rules/consistentImportName';
 
 export const rules = {
   'consistent-import-name': consistentImportNameRule,

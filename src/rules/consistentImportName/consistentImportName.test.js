@@ -7,8 +7,8 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-const { RuleTester } = require('eslint');
-const rule = require('../../../lib/rules/consistent-import-name');
+import { RuleTester } from 'eslint';
+import { consistentImportNameRule as rule } from './index';
 
 //------------------------------------------------------------------------------
 // Tests

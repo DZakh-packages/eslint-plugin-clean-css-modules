@@ -7,7 +7,7 @@
 // Rule Definition
 //------------------------------------------------------------------------------
 
-module.exports = {
+export const consistentImportNameRule = {
   meta: {
     docs: {
       description: 'Assures consistent usage of css-modules in your project',
