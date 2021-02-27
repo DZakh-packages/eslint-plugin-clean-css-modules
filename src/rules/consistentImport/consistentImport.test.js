@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 import { RuleTester } from 'eslint';
-import { consistentImport as rule } from './index';
+import { consistentImportRule as rule } from './index';
 
 //------------------------------------------------------------------------------
 // Tests

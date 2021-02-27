@@ -1,1 +1,1 @@
-export { consistentImport } from './consistentImportName.rule';
+export { consistentImportRule } from './consistentImport.rule';
