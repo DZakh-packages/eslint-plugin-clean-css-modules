@@ -1,7 +1,7 @@
 import { PACKAGE_VERSION } from '@/constants';
 
 export const MESSAGE_IDS = {
-  testKey1: 'testKey1',
+  shouldHaveOnlyDefaultImport: 'shouldHaveOnlyDefaultImport',
 };
 
 export const consistentImportRule = {
@@ -17,16 +17,30 @@ export const consistentImportRule = {
     fixable: 'code',
     schema: [],
     messages: {
-      [MESSAGE_IDS.testKey1]: 'Test message',
+      [MESSAGE_IDS.shouldHaveOnlyDefaultImport]: 'Css module should have only a default import.',
     },
   },
   create(context) {
     return {
-      ImportDeclaration(node) {
-        context.report({
-          node,
-          messageId: MESSAGE_IDS.testKey1,
-        });
+      ImportDeclaration: (node) => {
+        const specifiersNodes = node.specifiers;
+
+        /**
+         * A module that doesn't import any values.
+         * It may be useful for applying global css, so ignore the case.
+         */
+        const isSideEffectModule = specifiersNodes.length === 0;
+        if (isSideEffectModule) {
+          return;
+        }
+
+        const isTheOnlyImportSpecifier = specifiersNodes.length === 1;
+        if (!isTheOnlyImportSpecifier) {
+          context.report({
+            node,
+            messageId: MESSAGE_IDS.shouldHaveOnlyDefaultImport,
+          });
+        }
       },
     };
   },

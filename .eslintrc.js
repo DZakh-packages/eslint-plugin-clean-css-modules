@@ -1,8 +1,9 @@
 module.exports = {
   extends: ['airbnb-base', 'plugin:sonarjs/recommended', 'plugin:prettier/recommended'],
-  plugins: ['optimize-regex', 'sonarjs', 'no-loops', 'no-use-extend-native', 'prettier'],
+  plugins: ['optimize-regex', 'sonarjs', 'no-loops', 'no-use-extend-native', 'prettier', 'jest'],
   env: {
     es6: true,
+    'jest/globals': true,
   },
   root: true,
   settings: {
