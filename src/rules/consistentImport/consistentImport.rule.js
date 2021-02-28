@@ -1,4 +1,5 @@
 import { PACKAGE_VERSION } from '@/constants';
+import { checkIsStylePath } from '@/utils/checkers';
 
 export const MESSAGE_IDS = {
   shouldHaveOnlyDefaultImport: 'shouldHaveOnlyDefaultImport',
@@ -31,6 +32,15 @@ export const consistentImportRule = {
          */
         const isSideEffectModule = specifiersNodes.length === 0;
         if (isSideEffectModule) {
+          return;
+        }
+
+        /**
+         * We aren't interested in non-style modules
+         */
+        const moduleFilePath = node.source?.value;
+        const isStyleModule = checkIsStylePath(moduleFilePath);
+        if (!isStyleModule) {
           return;
         }
 
