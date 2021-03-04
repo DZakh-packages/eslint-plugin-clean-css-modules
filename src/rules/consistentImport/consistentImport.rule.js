@@ -38,7 +38,7 @@ export const consistentImportRule = {
         /**
          * We aren't interested in non-style modules
          */
-        const moduleFilePath = node.source?.value;
+        const moduleFilePath = node.source && node.source.value;
         const isStyleModule = checkIsStylePath(moduleFilePath);
         if (!isStyleModule) {
           return;

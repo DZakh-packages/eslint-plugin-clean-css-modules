@@ -22,7 +22,7 @@
     "dev": "rollup --config rollup.config.js --watch",
     "build": "rollup --config rollup.config.js",
     "test:watch": "jest --watch",
-    "test": "jest",
+    "test": "npm run lint:check && jest",
     "lint": "eslint --cache",
     "lint:fix": "npm run lint -- --fix --ext .js,.jsx ./src",
     "lint:check": "eslint --ext .js,.jsx ./src",
