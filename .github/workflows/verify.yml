@@ -5,6 +5,7 @@ on:
     branches:
       - master
     types: [review_requested, ready_for_review]
+  workflow_dispatch:
 
 jobs:
   verify:
