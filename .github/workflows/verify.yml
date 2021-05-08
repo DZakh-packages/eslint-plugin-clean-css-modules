@@ -23,10 +23,11 @@ jobs:
 
       - name: Version updated
         if: steps.check.outputs.changed != 'true'
-        run: 'echo "Version updated! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
+        run: |
+          echo "Version updated! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"
 
       - name: Version not updated
         if: steps.check.outputs.changed == 'true'
         run: |
-          'echo "Version not updated! Update version in package.json before merging to master."'
-          'exit 1'
+          echo "Version not updated! Update version in package.json before merging to master."
+          exit 1
