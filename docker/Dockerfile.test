@@ -1,0 +1,15 @@
+FROM node:14.16.0-alpine
+
+ENV NODE_ENV=production
+
+RUN mkdir -p /opt/app/
+
+WORKDIR /opt/app/
+
+COPY package*.json /opt/app/
+
+RUN npm ci --also=dev
+
+COPY . /opt/app
+
+ENTRYPOINT [ "npm", "run", "test" ]
