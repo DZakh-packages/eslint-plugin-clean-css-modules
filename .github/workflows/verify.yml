@@ -22,12 +22,12 @@ jobs:
           static-checking: localIsNew
 
       - name: Version updated
-        if: steps.check.outputs.changed != 'true'
+        if: steps.check.outputs.changed == 'true'
         run: |
           echo "Version updated! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"
 
       - name: Version not updated
-        if: steps.check.outputs.changed == 'true'
+        if: steps.check.outputs.changed != 'true'
         run: |
           echo "Version not updated! Update version in package.json before merging to master."
           exit 1
