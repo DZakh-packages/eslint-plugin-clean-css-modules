@@ -1,5 +1,7 @@
 # eslint-plugin-clean-css-modules
 
+[![Tests](https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/actions/workflows/test.yml)
+
 Helps in writing code with css-modules
 
 ## Installation
