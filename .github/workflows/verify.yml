@@ -7,9 +7,12 @@ on:
     types: [review_requested, ready_for_review]
 
 jobs:
-  test:
+  verify:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - id: check
         name: Verify if version updated
         uses: EndBug/version-check@v1
