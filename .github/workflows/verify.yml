@@ -21,10 +21,12 @@ jobs:
           file-url: https://raw.githubusercontent.com/DZakh-packages/eslint-plugin-clean-css-modules/master/package.json
           static-checking: localIsNew
 
-      - name: Log when changed
-        if: steps.check.outputs.changed == 'true'
-        run: 'echo "Version change found in commit ${{ steps.check.outputs.commit }}! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
+      - name: Version updated
+        if: steps.check.outputs.changed != 'true'
+        run: 'echo "Version updated! New version: ${{ steps.check.outputs.version }} (${{ steps.check.outputs.type }})"'
 
-      - name: Log when unchanged
+      - name: Version not updated
         if: steps.check.outputs.changed == 'true'
-        run: 'exit 1'
+        run: |
+          'echo "Version not updated! Update version in package.json before merging to master."'
+          'exit 1'
