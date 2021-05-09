@@ -16,33 +16,35 @@ export const noInconsistentDefaultImportRule = {
       suggestion: true,
     },
     fixable: 'code',
-    schema: {
-      type: 'object',
-      properties: {
-        imports: {
-          type: 'array',
-          items: {
-            type: 'object',
-            properties: {
-              pattern: { type: 'string' },
-              defaultImportName: {
-                type: 'string',
-              },
-              allowedNamedImports: {
-                type: 'array',
-                items: {
+    schema: [
+      {
+        type: 'object',
+        properties: {
+          imports: {
+            type: 'array',
+            items: {
+              type: 'object',
+              properties: {
+                pattern: { type: 'string' },
+                defaultImportName: {
                   type: 'string',
                 },
+                allowedNamedImports: {
+                  type: 'array',
+                  items: {
+                    type: 'string',
+                  },
+                },
               },
+              additionalProperties: false,
+              required: ['pattern', 'defaultImportName'],
             },
-            additionalProperties: false,
-            required: ['pattern', 'defaultImportName'],
           },
         },
+        additionalProperties: false,
+        required: ['imports'],
       },
-      additionalProperties: false,
-      required: ['imports'],
-    },
+    ],
     messages: {
       [MESSAGE_IDS.shouldHaveOnlyDefaultImport]: 'Css module should have only a default import.',
     },
