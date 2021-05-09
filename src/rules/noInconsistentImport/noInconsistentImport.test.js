@@ -1,6 +1,6 @@
 import { ruleTester } from '@/utils/ruleTesters';
 
-import { consistentImportRule } from './consistentImport.rule';
+import { noInconsistentImportRule } from './noInconsistentImport.rule';
 
 function makeImportCode({ importDeclarationSpecifiersCode, filePath }) {
   if (!importDeclarationSpecifiersCode) {
@@ -10,13 +10,13 @@ function makeImportCode({ importDeclarationSpecifiersCode, filePath }) {
   return `import ${importDeclarationSpecifiersCode} from '${filePath}'`;
 }
 
-describe('Test consistentImportRule', () => {
+describe('Test noInconsistentImportRule', () => {
   const VALID_IMPORT_SPECIFIER_NAME = 'css';
   const INVALID_IMPORT_SPECIFIER_NAME = '{ styles, meta }';
   const VALID_RELATIVE_CSS_FILE_PATH = './valid-import-path.css';
   const VALID_RELATIVE_JS_FILE_PATH = './valid-import-path.js';
 
-  ruleTester.run('Allows code with valid css params', consistentImportRule, {
+  ruleTester.run('Allows code with valid css params', noInconsistentImportRule, {
     valid: [
       {
         code: makeImportCode({
@@ -28,7 +28,7 @@ describe('Test consistentImportRule', () => {
     invalid: [],
   });
 
-  ruleTester.run('Allows css file import with side effect only', consistentImportRule, {
+  ruleTester.run('Allows css file import with side effect only', noInconsistentImportRule, {
     valid: [
       {
         code: makeImportCode({
@@ -40,7 +40,7 @@ describe('Test consistentImportRule', () => {
     invalid: [],
   });
 
-  ruleTester.run('Complains only on css-like files', consistentImportRule, {
+  ruleTester.run('Complains only on css-like files', noInconsistentImportRule, {
     valid: [
       {
         code: makeImportCode({
