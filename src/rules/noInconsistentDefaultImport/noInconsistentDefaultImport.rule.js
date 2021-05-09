@@ -5,13 +5,13 @@ export const MESSAGE_IDS = {
   shouldHaveOnlyDefaultImport: 'shouldHaveOnlyDefaultImport',
 };
 
-export const noInconsistentImportRule = {
+export const noInconsistentDefaultImportRule = {
   meta: {
     type: 'problem',
     docs: {
-      description: 'ensures consistent usage of css-modules in your project',
+      description: 'Ensures consistent default import in the whole project',
       category: 'Possible Errors',
-      url: `https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/blob/v${PACKAGE_VERSION}/src/rules/noInconsistentImport/noInconsistentImport.doc.md`,
+      url: `https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/blob/v${PACKAGE_VERSION}/src/rules/noInconsistentDefaultImport/noInconsistentDefaultImport.doc.md`,
       recommended: true,
       suggestion: true,
     },
