@@ -9,9 +9,9 @@ export const noInconsistentDefaultImportRule = {
   meta: {
     type: 'problem',
     docs: {
-      description: 'Ensures consistent default import in the whole project',
+      description: 'Ensures consistent default imports among the project',
       category: 'Possible Errors',
-      url: `https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/blob/v${PACKAGE_VERSION}/src/rules/noInconsistentDefaultImport/noInconsistentDefaultImport.doc.md`,
+      url: `https://github.com/DZakh-packages/eslint-plugin-consistent-imports/blob/v${PACKAGE_VERSION}/src/rules/noInconsistentDefaultImport/noInconsistentDefaultImport.doc.md`,
       recommended: true,
       suggestion: true,
     },

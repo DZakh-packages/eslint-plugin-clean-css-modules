@@ -17,7 +17,7 @@ jobs:
         name: Verify if version updated
         uses: EndBug/version-check@v1
         with:
-          file-url: https://raw.githubusercontent.com/DZakh-packages/eslint-plugin-clean-css-modules/master/package.json
+          file-url: https://raw.githubusercontent.com/DZakh-packages/eslint-plugin-consistent-imports/master/package.json
           static-checking: localIsNew
 
       - name: Version updated
