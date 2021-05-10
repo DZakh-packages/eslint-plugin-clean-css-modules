@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-consistent-imports",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Eslint plugin that ensures consistent default imports among the project",
   "keywords": [
     "eslint",
