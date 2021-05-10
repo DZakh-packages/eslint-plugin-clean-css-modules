@@ -9,6 +9,12 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if ready for review
+        if: github.event.pull_request.draft == true
+        run: |
+          echo "PR isn't ready for review. Workflow won't run before it."
+          exit 1
+
       - name: Checkout repository
         uses: actions/checkout@v2
 
