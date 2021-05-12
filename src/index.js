@@ -1,5 +1,5 @@
-import { consistentImportRule } from '@/rules/consistentImport';
+import { noInconsistentDefaultImportRule } from '@/rules/noInconsistentDefaultImport';
 
 export const rules = {
-  'consistent-import': consistentImportRule,
+  'no-inconsistent-default-import': noInconsistentDefaultImportRule,
 };

@@ -1,20 +1,20 @@
 {
-  "name": "eslint-plugin-clean-css-modules",
-  "version": "0.0.1",
-  "description": "Eslint plugin for people who use css-modules",
+  "name": "eslint-plugin-consistent-imports",
+  "version": "0.0.2",
+  "description": "Eslint plugin that ensures consistent default imports among the project",
   "keywords": [
     "eslint",
     "eslintplugin",
     "eslint-plugin",
-    "css-modules",
-    "dead classes",
-    "preprocessor"
+    "import",
+    "default",
+    "consistent"
   ],
-  "homepage": "https://github.com/DZakh-packages/eslint-plugin-clean-css-modules",
+  "homepage": "https://github.com/DZakh-packages/eslint-plugin-consistent-imports",
   "bugs": {
-    "url": "https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/issues"
+    "url": "https://github.com/DZakh-packages/eslint-plugin-consistent-imports/issues"
   },
-  "repository": "github:DZakh-packages/eslint-plugin-clean-css-modules",
+  "repository": "github:DZakh-packages/eslint-plugin-consistent-imports",
   "license": "MIT",
   "author": "Dmitry Zakharov",
   "main": "build/index.js",

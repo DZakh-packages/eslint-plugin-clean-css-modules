@@ -1,6 +1,6 @@
-# eslint-plugin-clean-css-modules
+# eslint-plugin-consistent-imports
 
-[![Tests](https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/DZakh-packages/eslint-plugin-clean-css-modules/actions/workflows/test.yml)
+[![Tests](https://github.com/DZakh-packages/eslint-plugin-consistent-imports/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/DZakh-packages/eslint-plugin-consistent-imports/actions/workflows/test.yml)
 
 Helps in writing code with css-modules
 
@@ -12,19 +12,19 @@ You'll first need to install [ESLint](http://eslint.org):
 npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-clean-css-modules`:
+Next, install `eslint-plugin-consistent-imports`:
 
 ```
-npm install eslint-plugin-clean-css-modules --save-dev
+npm install eslint-plugin-consistent-imports --save-dev
 ```
 
 ## Usage
 
-Add `clean-css-modules` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `consistent-imports` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-  "plugins": ["clean-css-modules"]
+  "plugins": ["consistent-imports"]
 }
 ```
 
@@ -33,7 +33,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "clean-css-modules/rule-name": 2
+    "consistent-imports/rule-name": 2
   }
 }
 ```
