@@ -1,5 +1,7 @@
 # eslint-plugin-consistent-imports
 
+## WIP! Don't try to use it!
+
 [![Tests](https://github.com/DZakh-packages/eslint-plugin-consistent-imports/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/DZakh-packages/eslint-plugin-consistent-imports/actions/workflows/test.yml)
 
 Helps in writing code with css-modules
