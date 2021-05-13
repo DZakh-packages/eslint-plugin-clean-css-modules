@@ -1,4 +1,4 @@
-name: Verify
+name: CI
 
 on:
   pull_request:
@@ -40,3 +40,19 @@ jobs:
         run: |
           echo "Version not updated! Update version in package.json before merging to master."
           exit 1
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if ready for review
+        if: github.event.pull_request.draft == true
+        run: |
+          echo "PR isn't ready for review. Workflow won't run before it."
+          exit 1
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run tests
+        run: |
+          make test
