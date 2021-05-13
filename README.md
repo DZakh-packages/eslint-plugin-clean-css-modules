@@ -6,7 +6,7 @@
 
 Helps in writing code with css-modules
 
-## Installation
+## Installation :)
 
 You'll first need to install [ESLint](http://eslint.org):
 
